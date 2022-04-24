@@ -5,7 +5,7 @@
 	display: flex;
 	flex-wrap: nowrap;
 	justify-content: space-between;
-	height: 14em;
+	height: 10em;
 	margin-top: 1em;
 	padding: 0 2em;
 	p {
@@ -19,9 +19,10 @@
 	}
 }
 
-.special-offers {
+.special-offers, .contacts {
  display: flex;
  flex-direction: column;
+ justify-content: space-between;
  width: 30%;
 }
 
@@ -40,20 +41,46 @@
 }
 
 .contacts {
+	p {
+		text-align: right;
+	}
 	a {
 		&:hover, &:focus {
 			color: $light;
 		}
 	}
-	text-align: right;
+}
+
+.tel-number {
+	@include adaptiv-font(30, 14);
 }
 
 .hover-blu {
+	position: relative;
+	padding-right: 2.2em;
 	a {
 		text-transform: uppercase;
 		&:hover, &:focus {
 			color: $patriot;
 		}
+	&::before {
+		content: "";
+		height: 0.75em;
+		width: 2em;
+		position: absolute;
+		top: 0;
+		right: 0;
+		background-color: $patriot;
+	}
+	&::after {
+		content: "";
+		height: 0.75em;
+		width: 2em;
+		position: absolute;
+		bottom: 0;
+		right: 0;
+		background-color: yellow;
+	}
 	}
 }
 
@@ -142,12 +169,12 @@
 	.foto, .icon {
 		height: 6em;
 		width: 6em;
-		border-radius: 50%;
 		float: left;
 		margin: 0.5em 1em 0 0;
 	}
-	.icon {
-		border-radius: 0;
+	.foto {
+		height: 10em;
+		width: 10em;
 	}
 }
 
