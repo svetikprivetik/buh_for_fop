@@ -1,0 +1,83 @@
+
+/* Large desktops and laptops */
+@media (min-width: 1200px) {
+
+}
+
+/* Landscape tablets and medium desktops */
+@media (min-width: 992px) and (max-width: 1199px) {
+
+	footer {
+		padding-right: 3.5em;
+	}
+
+}
+
+/* Portrait tablets and small desktops */
+@media (min-width: 768px) and (max-width: 991px) {
+
+	footer {
+		padding-right: 3.5em;
+	}
+
+}
+
+/* Landscape phones and portrait tablets */
+@media (max-width: 767px) {
+
+	.header img {
+		height: 80%;
+		padding: 0 2em 1em;
+  }
+
+  .special-offers {
+	  width: 35%;
+  }
+
+	footer {
+		padding-right: 3.5em;
+	}
+
+	.service {
+		width: 90%;
+	}
+
+	.service-container {
+		justify-content: center;
+	}
+
+}
+
+/* Portrait phones and smaller */
+@media (max-width: 480px) {
+
+	.header {
+		height: 9em;
+		img {
+			padding: 0 1em 1em;
+		}
+	}
+
+	footer {
+		.contacts {
+			width: 100%;
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-around;
+			padding-bottom: 2em;
+			order: 1;
+			p {
+				padding: 0 2em;
+			}
+		}
+		.footer-services {
+			order: 2;
+		}
+	}
+
+}
+
+/* Iphone 5 */
+@media (max-width: 320px) {
+
+}

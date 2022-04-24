@@ -1,0 +1,267 @@
+// ГЛАВНАЯ СТРАНИЦА
+
+//! HEADER
+.header {
+	display: flex;
+	flex-wrap: nowrap;
+	justify-content: space-between;
+	height: 14em;
+	margin-top: 1em;
+	padding: 0 2em;
+	p {
+		display: block;
+		margin: auto 0;
+		text-align: center;
+	}
+	img {
+		height: 100%;
+		padding: 0 2em 1em;
+	}
+}
+
+.special-offers {
+ display: flex;
+ flex-direction: column;
+ width: 30%;
+}
+
+.patriot {
+	color: $patriot;
+	&:hover, &:focus {
+		color: yellow;
+	}
+}
+
+.worning {
+	color: red;
+	&:hover, &:focus {
+		color: $colored;
+	}
+}
+
+.contacts {
+	a {
+		&:hover, &:focus {
+			color: $light;
+		}
+	}
+	text-align: right;
+}
+
+.hover-blu {
+	a {
+		text-transform: uppercase;
+		&:hover, &:focus {
+			color: $patriot;
+		}
+	}
+}
+
+//! МЕНЮ
+
+.navigation {
+	background-color: $colored;
+}
+
+.navi {
+	width: 100%;
+	text-align: center;
+	a {
+		color: black;
+		font-weight: 600;
+	}
+}
+
+.navi-1 {
+	display: flex;
+	justify-content: space-between;
+	position: relative;
+	li {
+		padding: 0.5em;
+		&:hover, &:focus {
+			background-color: $colored;
+			}
+		}
+		
+	}
+	
+	a {
+		&:hover, &:focus {
+			color: $dark;
+		}
+}
+
+//! ВЫПАДАЮЩЕЕ МЕНЮ
+
+.subnavi {
+	&:hover, &:focus {
+		.navi-2 {
+			display: block;
+		}
+	}
+}
+
+.navi-2 {
+	display: none;
+	position: absolute;
+	top: 100%;
+	left: 0;
+	margin-left: -2em;
+	li {
+		text-align: center;
+		background-color: $colored;
+		a {
+			color: black;
+		}
+	}
+}
+
+//!КОНТЕНТ
+
+.about {
+	width: 100%;
+}
+
+.service {
+	width: 48%;
+}
+
+.service-container {
+	justify-content: space-between;
+}
+
+
+.content {
+	border: 2px solid $colored;
+	border-top: none;
+	border-right: none;
+	padding: 0 0 2em 2em;
+	p {
+		text-align: left;
+	}
+	.foto, .icon {
+		height: 6em;
+		width: 6em;
+		border-radius: 50%;
+		float: left;
+		margin: 0.5em 1em 0 0;
+	}
+	.icon {
+		border-radius: 0;
+	}
+}
+
+//! КНОПКА СВЯЗИ
+
+.connection {
+	position: fixed;
+	right: 1em;
+	bottom: 5em;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+	&:hover, &:focus {
+		.connection-list {
+			display: flex;
+			flex-direction: column;
+			align-items: flex-end;
+		}
+	}
+}
+
+.connection-title {
+	border-radius: 15px;
+	color: black;
+	&:hover, &:focus {
+		color: $light;
+	}
+}
+
+.connection-icon {
+	height: 3em;
+		img{
+			width: 3em;
+			height: 3em;
+			&:hover, &:focus {
+				height: 3.5em;
+				width: 3.5em;
+			}
+		}
+}
+.connection-icon-coll {
+	padding: 0.2em;
+}
+
+.connection-item {
+	display: flex;
+	align-items: center;
+	padding: 0.5em 0 0.5em 0.5em;
+	height: 3.5em;
+}
+
+.coll{
+	background-color: #88bf48;
+	color: $dark;
+	padding: 0.5em;
+}
+
+.viber {
+	background-color: #9230be;
+	border-bottom: 2px solid #9230be;
+	padding: 0.5em;
+}
+
+.telegram {
+	background-color: #29b6f6;
+	padding: 0.5em;
+}
+
+.email {
+	background-color: #ff6207;
+	padding: 0.5em;
+}
+
+.connection-list {
+	display: none;
+}
+
+.connection-button, .up-button {
+	img {
+		height: 3.2em;
+		margin: 0.5em 0;
+		&:hover, &:focus {
+			height: 3.5em;
+			width: 3.5em;
+		}
+	}
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	cursor: pointer;
+}
+
+.up-button {
+	position: fixed;
+	right: 1em;
+	bottom: 1em;
+	&:hover, &:focus {
+		.connection-list {
+			display: none;
+		}
+	}
+}
+
+//! FOOTER
+
+footer {
+	margin: 2em 0;
+	padding-top: 2em;
+}
+
+.footer-services {
+	a {
+		&:hover, &:focus {
+			color: $light;
+		}
+	}
+}
