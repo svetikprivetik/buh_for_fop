@@ -147,34 +147,189 @@
 
 .about {
 	width: 100%;
+	p {
+		padding-bottom: 1em;
+	}
 }
 
 .service {
 	width: 48%;
+	text-align: center;
+	padding-top: 2em;
+	h2, img {
+		display: inline;
+	}
+	img {
+		height: 2em;
+		padding: 0 1em;
+	}
 }
 
-.service-container {
-	justify-content: space-between;
+//! ФОРМА ОБРАТНОЙ СВЯЗИ
+
+.form {
+	width: 60%;
+	margin: 0 auto;
+}
+
+.form-body {
+	position: relative;
+	// padding: 2em;
+	&::after {
+		content: "";
+		position: absolute;
+		top: -5%;
+		left: -10%;
+		width: 120%;
+		height: 110%;
+		background: rgba(255, 196, 0, 0.2) url(/images/loading.gif) center / 10em no-repeat;
+		opacity: 0;
+		visibility: hidden;
+		transition: all 0.5s ease 0s;
+	}
+}
+
+.form-body._sending::after {
+	opacity: 1;
+	visibility: visible;
 }
 
 
-.content {
-	border: 2px solid $colored;
-	border-top: none;
-	border-right: none;
-	padding: 0 0 2em 2em;
-	p {
-		text-align: left;
+.form-title {
+	@include adaptiv-font(40, 20);
+	margin: 3em 0 1em;
+	text-align: center;
+}
+
+.form-item {
+	margin: 0 0 1.5em 0;
+	display: block;
+}
+
+.form-label {
+	@include adaptiv-font(28, 14);
+}
+
+.form-input {
+	height: 3em;
+	width: 100%;
+	padding: 0 1em;
+	background-color: rgba(255, 196, 0, 0.2);
+}
+
+.form-input._error {
+	box-shadow: 0 0 0.5em red;
+}
+
+textarea.form-input {
+	min-height: 5em;
+	resize: vertical;
+	padding: 0.5em 1em;
+}
+
+.options-item {
+ margin-top: 0.7em;
+}
+
+.options-input {
+	display: none;
+}
+
+.options-input:checked + .options-label::after {
+	transform: scale(1);
+}
+
+.options-label {
+	position: relative;
+	display: flex;
+	@include adaptiv-font(24, 12);
+	align-items: center;
+	&::before {
+		content: "";
+		flex: 0 0 1em;
+		height: 1em;
+		background-color: $colored;
+		border-radius: 50%;
+		margin-right: 0.8em;
+		text-align: center;
 	}
-	.foto, .icon {
-		height: 6em;
-		width: 6em;
-		float: left;
-		margin: 0.5em 1em 0 0;
+	&::after {
+		transition: transform 0.3s ease 0s;
+		content: "";
+		position: absolute;
+		top: -0.1em;
+		left: -0.2em;
+		width: 1.4em;
+		height: 1.4em;
+		background-color: $green;
+		border-radius: 50%;
+		transform: scale(0);
+		text-align: center;
 	}
-	.foto {
-		height: 10em;
-		width: 10em;
+}
+
+.checkbox._error .checkbox-label::before{
+	box-shadow: 0 0 0.5em red;
+}
+
+.checkbox-input {
+	display: none;
+}
+
+.checkbox-input:checked + .checkbox-label::after {
+	transform: scale(1);
+}
+
+.checkbox-label {
+	@include adaptiv-font(26, 13);
+	display: inline-flex;
+	align-items: center;
+	position: relative;
+	cursor: pointer;
+}
+
+.checkbox-label {
+	&::before {
+		content: "";
+		width: 1.3em;
+		height: 1.3em;
+		background-color: $colored;
+		margin-right: 0.7em;
+	}
+	&::after {
+		transition: transform 0.5s ease 0s;
+		content: "";
+		width: 1em;
+		height: 1em;
+		position: absolute;
+		top: 0.17em;
+		left: 0.17em;
+		background-color: $green;
+		transform: scale(0);
+	}
+}
+
+.form-button {
+	width: 100%;
+	height: 3em;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: rgba(255, 196, 0, 0.2);
+	@include adaptiv-font(28, 14);
+	text-transform: uppercase;
+	letter-spacing: 0.1em;
+	font-weight: 600;
+	transition: background-color 0.5s ease 0s;
+	position: relative;
+	top: 0;
+	left: 0;
+	&:hover, &:focus {
+		background-color: rgba(255, 196, 0, 0.3);
+	}
+	&:active {
+		top: 0.2em;
+
 	}
 }
 
@@ -282,11 +437,12 @@
 
 footer {
 	margin: 2em 0;
-	padding-top: 2em;
+	padding: 2em 0;
 }
 
 .footer-services {
 	a {
+		padding-right: 1em;
 		&:hover, &:focus {
 			color: $light;
 		}

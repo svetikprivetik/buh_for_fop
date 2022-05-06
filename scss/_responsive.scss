@@ -34,12 +34,16 @@
 	  width: 35%;
   }
 
+  .form {
+	  width: 100%;
+  }
+
 	footer {
 		padding-right: 3.5em;
 	}
 
 	.service {
-		width: 90%;
+		width: 100%;
 	}
 
 	.service-container {
@@ -51,11 +55,15 @@
 /* Portrait phones and smaller */
 @media (max-width: 480px) {
 
-	.header {
-		height: 9em;
-		img {
-			padding: 0 1em 1em;
-		}
+	.container {
+		padding: 0 1em;
+	}
+	.special-offers {
+		width: 25%;
+	}
+
+	.contacts {
+		width: 35%;
 	}
 
 	footer {
@@ -75,6 +83,30 @@
 		}
 	}
 
+}
+
+@media (max-width: 380px) {
+
+	.header {
+		flex-wrap: wrap;
+		height: auto;
+		padding: 0px 1em;
+		img {
+			order: -1;
+			height: 8em;
+			padding: 0 1em 1em 0;
+		}
+	}
+	.special-offers {
+		order: 1;
+		width: 100%;
+		padding: 1em;
+	}
+
+	.contacts {
+		width: 45%;
+	}
+	
 }
 
 /* Iphone 5 */

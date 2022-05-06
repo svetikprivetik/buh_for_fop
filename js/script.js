@@ -1,199 +1,75 @@
+"use strict"
 
+document.addEventListener('DOMContentLoaded', function () {
+	const form = document.getElementById('form');
+	form.addEventListener('submit', formSend);
 
-// СЛАЙДЕР-ГАЛЕРЕЯ
+	async function formSend(e) {
+		e.preventDefault();
 
-const gallery = new Swiper('.gallery', {
-	// Направление прокрутки
-	direction: 'horizontal',
+		let error = formValidate(form);
 
-	// Прокрутка по кругу
-	loop: true,
+		let formData = new FormData(form);
 
-	// Количесво отображаемых слайдов
-	slidesPerView: 2,
-
-	// Расстояние между слайдами
-	spaceBetween: 14,
-
-	// Стрелки навигации
-	navigation: {
-		nextEl: '.swiper-button-next',
-		prevEl: '.swiper-button-prev',
-	 },
- 
-	// If we need pagination
-	pagination: {
-	  el: '.swiper-pagination',
-
-	//   Кликабельность буллетов
-	clickable: true,
-
-	//   Буллеты разного размера в зависимости от близости активного слайда
-	dynamicBullets: true,
-
-	// Курсор при перетаскивании
-	grabCursor: true,
-	},
-
-	// Прокрутка слайдов колесом мышки
-	mousewheel: {
-		// скорость прокрутки слайдов
-		sensitivity: 2,
-	},
-
-	// Активный слайд по центру
-	centeredSlides: true,
-
-	// Автопрокрутка
-	autoplay: {
-		// Пауза между прокрутками
-		delay: 8000,
-		// Отключить автопрокрутку после ручного переключения
-		disableOnInteraction: false,
-	},
-
-	// Скорость переключения слайдов
-	speed: 2000,
-
-	// Эффект прокрутки
-	effect: 'coverflow',
-	// Настройки coverflow	
-	coverflowEffect: {
-		// Угол
-		rotate: 20,
-		// Наложение
-		stretch: 50,
-		// Тень
-		slideShadows: false,
-	},
-
-	// АДАПТИВ
-
-	breakpoints: {
-		1000: {
-			slidesPerView: 2,
+		if (error === 0) {
+			form.classList.add('_sending');
+			let response = await fetch('sendmail.php', {
+				method: 'POST',
+				body: formData
+			});
+			if (response.ok) {
+				let result = await response.json();
+				alert(result.message);
+				formPreview.innerHTML = '';
+				form.reset();
+				form.classList.remove('_sending');
+			} else {
+				alert("Ошибка");
+				form.classList.remove('_sending');
+			}
+		} else {
+			alert('Заполните обязательные поля');
 		}
+
 	}
-	
- });
 
- // СЛАЙДЕР-ОТЗЫВЫ
 
-const comments = new Swiper('.comments', {
-	// Направление прокрутки
-	direction: 'horizontal',
+	function formValidate(form) {
+		let error = 0;
+		let formReq = document.querySelectorAll('._req');
 
-	// Прокрутка по кругу
-	loop: true,
+		for (let index = 0; index < formReq.length; index++) {
+			const input = formReq[index];
+			formRemoveError(input);
 
-	// Количесво отображаемых слайдов
-	slidesPerView: 4,
-
-	// Расстояние между слайдами
-	spaceBetween: 14,
-
-	// Стрелки навигации
-	navigation: {
-		nextEl: '.swiper-button-next',
-		prevEl: '.swiper-button-prev',
-	 },
- 
-	// If we need pagination
-	pagination: {
-	  el: '.swiper-pagination',
-
-	//   Кликабельность буллетов
-	clickable: true,
-
-	//   Буллеты разного размера в зависимости от близости активного слайда
-	dynamicBullets: true,
-
-	// Курсор при перетаскивании
-	grabCursor: true,
-	},
-
-	// Прокрутка слайдов колесом мышки
-	mousewheel: {
-		// скорость прокрутки слайдов
-		sensitivity: 2,
-	},
-
-	// Активный слайд по центру
-	centeredSlides: false,
-
-	// Автопрокрутка
-	autoplay: {
-		// Пауза между прокрутками
-		delay: 6000,
-		// Отключить автопрокрутку после ручного переключения
-		disableOnInteraction: false,
-	},
-
-	// Скорость переключения слайдов
-	speed: 2000,
- });
-
- // !СЛАЙДЕР-ГАЛЕРЕЯ на странице продукта
-
-const gallery__product = new Swiper('.gallery__product', {
-	// Направление прокрутки
-	direction: 'horizontal',
-
-	// Прокрутка по кругу
-	loop: true,
-
-	// Количесво отображаемых слайдов
-	slidesPerView: 1,
-
-	// Расстояние между слайдами
-	spaceBetween: 14,
-
-	// Стрелки навигации
-	navigation: {
-		nextEl: '.swiper-button-next',
-		prevEl: '.swiper-button-prev',
-	 },
- 
-	// If we need pagination
-	pagination: {
-	  el: '.swiper-pagination',
-
-	//   Кликабельность буллетов
-	clickable: true,
-
-	//   Буллеты разного размера в зависимости от близости активного слайда
-	dynamicBullets: true,
-
-	// Курсор при перетаскивании
-	grabCursor: true,
-	},
-
-	// Прокрутка слайдов колесом мышки
-	mousewheel: {
-		// скорость прокрутки слайдов
-		sensitivity: 1,
-	},
-
-	// Активный слайд по центру
-	centeredSlides: false,
-
-	// Автопрокрутка
-	autoplay: {
-		// Пауза между прокрутками
-		delay: 4000,
-		// Отключить автопрокрутку после ручного переключения
-		disableOnInteraction: true,
-	},
-
-	// Скорость переключения слайдов
-	speed: 2000,
-
-		// АДАПТИВ
-
-	breakpoints: {
-		1000: {
-			slidesPerView: 1,
+			if (input.classList.contains('_email')) {
+				if (emailTest(input)) {
+					formAddError(input);
+					error++;
+				}
+			} else if (input.getAttribute("type") === "checkbox" && input.checked === false) {
+				formAddError(input);
+				error++;
+			} else {
+				if (input.value === '') {
+					formAddError(input);
+					error++;
+				}
+			}
 		}
+		return error;
 	}
-	
- });
+	function formAddError(input) {
+		input.parentElement.classList.add('_error');
+		input.classList.add('_error');
+	}
+	function formRemoveError(input) {
+		input.parentElement.classList.remove('_error');
+		input.classList.remove('_error');
+	}
+	//Функция теста email
+	function emailTest(input) {
+		return !/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,8})+$/.test(input.value);
+	}
+
+});

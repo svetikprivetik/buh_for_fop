@@ -14,6 +14,7 @@ ul li{list-style: none;}
 img{vertical-align: top;}
 h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: 600;} 
 
+
 .wrapper {
 	min-height: 100%;
 	display: flex;
@@ -68,9 +69,39 @@ body {
 	height: 100%;
 }
 
+h1 {
+	width: 100%;
+	text-align: center;
+	@include adaptiv-font(40, 20);
+	margin: 3em 0 1em;
+	position: relative;
+	padding-bottom: 0.5em;
+	a {
+		font-size: inherit;
+		&:hover, &:focus {
+			color: $light;
+		}
+	}
+	&::after {
+		content: "";
+		position: absolute;
+		top: 100%;
+		right: 42%;
+		background-color: $colored;
+		width: 5em;
+		height: 2px;
+	}
+}
+
 h2 {
 	@include adaptiv-font(30, 15);
 	margin: 3em 0 1em;
+	a {
+		font-size: inherit;
+		&:hover, &:focus {
+			color: $light;
+		}
+	}
 }
 
 .bold {

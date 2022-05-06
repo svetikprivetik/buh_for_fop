@@ -1,0 +1,53 @@
+
+.service-container {
+	justify-content: space-between;
+}
+
+.service {
+	margin-top: 1em;
+}
+
+.content {
+	border: 2px solid $colored;
+	border-top: none;
+	border-right: none;
+	padding: 0 0 2em 2em;
+	margin-top: 2em;
+	a {
+		&:hover, &:focus {
+			color: $light;
+		}
+	}
+	p {
+		text-align: left;
+	}
+	.foto, .icon {
+		height: 6em;
+		width: 6em;
+		float: left;
+		margin: 0.5em 1em 0 0;
+		padding: 0;
+	}
+	.foto {
+		height: 10em;
+		width: 10em;
+	}
+}
+
+.services-list {
+	li {
+		padding: 0.5em 0;
+		@include adaptiv-font(24, 12);
+		a {
+			font-size: inherit;
+		}
+	}
+}
+
+@media (max-width: 350px) {
+
+	.service-container {
+		padding: 1em;
+	}
+
+}
