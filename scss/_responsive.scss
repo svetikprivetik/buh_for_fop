@@ -6,107 +6,57 @@
 
 /* Landscape tablets and medium desktops */
 @media (min-width: 992px) and (max-width: 1199px) {
-
-	footer {
-		padding-right: 3.5em;
-	}
-
 }
 
 /* Portrait tablets and small desktops */
 @media (min-width: 768px) and (max-width: 991px) {
-
-	footer {
-		padding-right: 3.5em;
+	.service {
+		width: 100%;
 	}
-
 }
 
 /* Landscape phones and portrait tablets */
 @media (max-width: 767px) {
-
-	.header img {
-		height: 80%;
-		padding: 0 2em 1em;
-  }
-
-  .special-offers {
-	  width: 35%;
-  }
-
-  .form {
-	  width: 100%;
-  }
-
-	footer {
-		padding-right: 3.5em;
+	.container {
+		padding: 0 1em;
 	}
-
 	.service {
 		width: 100%;
-	}
-
-	.service-container {
-		justify-content: center;
 	}
 
 }
 
 /* Portrait phones and smaller */
 @media (max-width: 480px) {
-
-	.container {
-		padding: 0 1em;
-	}
 	.special-offers {
-		width: 25%;
+		display: none;
 	}
-
 	.contacts {
-		width: 35%;
+		width: 100%;
 	}
 
-	footer {
-		.contacts {
+	.content {
+		flex-direction: column;
+		align-items: center;		
+		justify-content: start;
+		img {
+			margin: 0 2em 2em;
+			padding-right: 1em;
+		}
+		div {
+			margin-left: 0;
+			padding-right: 1em;
+		}
+	}
+
+	.footer-services {
+		ul {
 			width: 100%;
-			display: flex;
-			flex-wrap: wrap;
-			justify-content: space-around;
-			padding-bottom: 2em;
-			order: 1;
-			p {
-				padding: 0 2em;
-			}
-		}
-		.footer-services {
-			order: 2;
 		}
 	}
-
 }
 
 @media (max-width: 380px) {
-
-	.header {
-		flex-wrap: wrap;
-		height: auto;
-		padding: 0px 1em;
-		img {
-			order: -1;
-			height: 8em;
-			padding: 0 1em 1em 0;
-		}
-	}
-	.special-offers {
-		order: 1;
-		width: 100%;
-		padding: 1em;
-	}
-
-	.contacts {
-		width: 45%;
-	}
-	
 }
 
 /* Iphone 5 */
