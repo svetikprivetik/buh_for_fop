@@ -217,7 +217,7 @@ h2 a:hover, h2 a:focus {
 }
 
 h3 {
-  margin-top: 3em;
+  margin: 2em 2em 1em;
   text-align: center;
 }
 
@@ -232,6 +232,25 @@ h3 {
   h3 {
     font-size: -webkit-calc(15px + 15 * (100vw / 1920));
     font-size: calc(15px + 15 * (100vw / 1920));
+  }
+}
+
+h4 {
+  text-align: center;
+  margin: 1em;
+}
+
+@media (max-width: 767px) {
+  h4 {
+    font-size: -webkit-calc(20px + 20 * ((100vw - 320px) / 1920));
+    font-size: calc(20px + 20 * ((100vw - 320px) / 1920));
+  }
+}
+
+@media (min-width: 767px) {
+  h4 {
+    font-size: -webkit-calc(20px + 20 * (100vw / 1920));
+    font-size: calc(20px + 20 * (100vw / 1920));
   }
 }
 
@@ -418,7 +437,7 @@ h3 {
   margin: 0 auto 3em;
 }
 
-.form-container {
+.form-container, .form-container-order {
   width: 100%;
   background-color: rgba(175, 205, 131, 0.3);
   margin: 0 auto;
@@ -444,7 +463,7 @@ h3 {
   }
 }
 
-.form-button {
+.form-button, .service-button {
   width: 100%;
   height: 3em;
   display: -webkit-box;
@@ -473,25 +492,36 @@ h3 {
 }
 
 @media (max-width: 767px) {
-  .form-button {
+  .form-button, .service-button {
     font-size: -webkit-calc(16px + 16 * ((100vw - 320px) / 1920));
     font-size: calc(16px + 16 * ((100vw - 320px) / 1920));
   }
 }
 
 @media (min-width: 767px) {
-  .form-button {
+  .form-button, .service-button {
     font-size: -webkit-calc(16px + 16 * (100vw / 1920));
     font-size: calc(16px + 16 * (100vw / 1920));
   }
 }
 
-.form-button:hover, .form-button:focus {
+.form-button:hover, .form-button:focus, .service-button:hover, .service-button:focus {
   background-color: #afcd83;
 }
 
-.form-button:active {
+.form-button:active, .service-button:active {
   top: 0.2em;
+}
+
+.form-container-order {
+  margin: 5em auto 1em;
+  padding: 5em 0 2em;
+}
+
+.service-button {
+  width: 60%;
+  font-size: inherit;
+  margin-top: 2em;
 }
 
 .connection {
@@ -665,6 +695,10 @@ footer {
 }
 
 .service-container {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
       -ms-flex-pack: justify;
@@ -688,7 +722,7 @@ footer {
 
 .service img {
   height: 1.5em;
-  padding: 0 1em;
+  padding: 0 0.5em 0;
 }
 
 .content {

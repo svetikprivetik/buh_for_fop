@@ -139,7 +139,7 @@
 	margin: 0 auto 3em;
 }
 
-.form-container {
+.form-container, .form-container-order {
 	width: 100%;
 	background-color: rgba(175, 205, 131, 0.3);
 	margin: 0 auto;
@@ -151,7 +151,7 @@
 	margin: 2em 0 3em;
 	text-align: center;
 }
-.form-button {
+.form-button, .service-button {
 	width: 100%;
 	height: 3em;
 	display: flex;
@@ -174,6 +174,16 @@
 		top: 0.2em;
 
 	}
+}
+
+.form-container-order {
+	margin: 5em auto 1em;
+	padding: 5em 0 2em;
+}
+.service-button {
+	width: 60%;
+	font-size: inherit;
+	margin-top: 2em;
 }
 
 //! КНОПКА СВЯЗИ

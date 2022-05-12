@@ -100,9 +100,15 @@ h2 {
 }
 
 h3 {
-	margin-top: 3em;
+	margin: 2em 2em 1em;
 	@include adaptiv-font(30, 15);
 	text-align: center;
+}
+
+h4 {
+	text-align: center;
+	@include adaptiv-font(40, 20);
+	margin: 1em;
 }
 
 .bold {
