@@ -80,6 +80,7 @@
 
 .navigation {
 	background-color: $colored;
+	box-shadow: 0 1em 1em $darkgreen;
 }
 
 .navi {
@@ -161,6 +162,8 @@
 	text-transform: uppercase;
 	letter-spacing: 0.1em;
 	font-weight: 600;
+	border-radius: 20px;
+	box-shadow: 1em 1em 1em $darkgreen;
 	transition: background-color 0.5s ease 0s;
 	position: relative;
 	top: 0;
