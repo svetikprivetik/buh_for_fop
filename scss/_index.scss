@@ -35,11 +35,15 @@
 	}
 }
 
-.worning {
+.worning, .important {
 	color: $darkRed;
 	&:hover, &:focus {
 		color: green;
 	}
+}
+
+.important {
+	font-size: inherit;
 }
 
 .contacts {
@@ -100,14 +104,6 @@
 
 //! ВЫПАДАЮЩЕЕ МЕНЮ
 
-.subnavi {
-	&:hover, &:focus {
-		.navi-2 {
-			display: block;
-		}
-	}
-}
-
 .navi-2 {
 	display: none;
 	position: absolute;
@@ -131,7 +127,89 @@
 }
 
 //!КОНТЕНТ
-// _content.scss
+
+
+.service-container {
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 2em;
+}
+
+.about {
+	width: 100%;
+}
+
+.service {
+	width: 48%;
+	text-align: center;
+	padding-top: 2em;
+	h2, img {
+		display: inline;
+	}
+	img {
+		height: 1.5em;
+		padding: 0 0.5em 0;
+	}
+}
+
+.content {
+	display: flex;
+	justify-content: space-between;
+	border: 2px solid $dark;
+	border-top: none;
+	border-right: none;
+	padding: 0 0 2em 2em;
+	margin-top: 4em;
+	div {
+		margin-left: 2em;
+		flex-grow: 1;
+	}
+	a {
+		&:hover, &:focus {
+			color: $green;
+		}
+	}
+	p {
+		display: flex;
+		flex-direction: column;
+		text-align: left;
+		align-self: center;
+	}
+	.foto, .icon {
+		height: auto;
+		width: 33%;
+	}
+
+	.full {
+		width: 100%;
+	}
+}
+
+.services-list {
+	li {
+		padding: 0.5em 0;
+		@include adaptiv-font(24, 12);
+		a {
+			font-size: inherit;
+		}
+	}
+}
+
+.list-of-links {
+	li {
+		padding: 1em 0;
+		font-weight: 600;
+	}
+}
+
+.topic {
+	img {
+		width: 100%;
+	}
+	p {
+		padding-bottom: 1em;
+	}
+}
 
 //! ФОРМА ОБРАТНОЙ СВЯЗИ
 
@@ -149,7 +227,7 @@
 
 .form-title {
 	@include adaptiv-font(40, 20);
-	margin: 2em 0 3em;
+	margin: 2em 0 2em;
 	text-align: center;
 }
 .form-button, .service-button {
