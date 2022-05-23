@@ -876,6 +876,9 @@ footer {
     margin-left: 0;
     padding-right: 1em;
   }
+  .topic img {
+    margin: 0;
+  }
   .footer-services ul {
     width: 100%;
   }
